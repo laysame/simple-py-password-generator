@@ -21,13 +21,13 @@ def generate_password(nr_letters, nr_symbols, nr_numbers):
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
     password = []
-    for _ in range(nr_letters):
+    for _ in range(1, nr_letters + 1):
         random_letters = random.choice(letters)
         password.append(random_letters)
-    for _ in range(nr_symbols):
+    for _ in range(1, nr_symbols + 1):
         random_symbols = random.choice(symbols)
         password.append(random_symbols)
-    for _ in range(nr_numbers):
+    for _ in range(1, nr_numbers + 1):
         random_numbers = random.choice(numbers)
         password.append(random_numbers)
 
@@ -44,4 +44,4 @@ if __name__ == "__main__":
     # Calling start_generator to get parameters
     params = start_generator()
     password = generate_password(*params)
-    print(f"Your password is: {password}")
+    print(f"Here is a random password: \n{password}")
